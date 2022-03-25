@@ -3,6 +3,10 @@ A pipeline for particle detection in cryo-electron microscopy images using convo
 
 **Check out our [Discussion](https://github.com/tbepler/topaz/discussions) section for general help, suggestions, and tips on using Topaz.**
 
+## New in modification for filament picking:
+- Added support for filament start-end coordinate picking (new options -f, -fp and -fl in the extract command), for subsequent helical reconstruction in RELION
+- This adds a new dependency to skimage (make sure you install this in your conda environment)
+
 ## New in v0.2.5
 - Added Relion integration scripts
 - Topaz extract can now write particle coordinates to one file per input micrograph
