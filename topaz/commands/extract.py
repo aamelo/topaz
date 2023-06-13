@@ -265,10 +265,10 @@ class NonMaximumSuppression:
     def __call__(self, args):
         name,score = args
         if self.do_filaments:
-            score,coords = pick_filaments(score, self.radius, threshold=self.threshold, length=self.filaments_length, filaments_plot = self.filaments_plot )
+            score,coords = pick_filaments(score, self.radius, threshold=self.threshold, filaments_length=self.filaments_length, filaments_plot = self.filaments_plot )
         else:
             score,coords = non_maximum_suppression(score, self.radius, threshold=self.threshold, length=self.filaments_length)
-        return name, core, coords
+        return name, score, coords
 
 def nms_iterator(scores, radius, threshold, pool=None, do_filaments=False, filaments_length=150, filaments_plot=False):
     process = NonMaximumSuppression(radius, threshold, do_filaments, filaments_length, filaments_plot)
